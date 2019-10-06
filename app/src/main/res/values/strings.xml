@@ -1,0 +1,15 @@
+<resources>
+    <string name="error_technical">A technical error occurred. Please, try again later.</string>
+    <string name="error_no_internet_connection">No Internet connection</string>
+    <string name="error_passwords_not_match">Passwords don\'t match</string>
+    <string name="error_forgot_input">Input error</string>
+    <string name="error_invalid_data">Invalid data</string>
+    <string name="error_empty_field">Field cannot be empty</string>
+    <string name="error_minimum_length">Minimum length: %1$d</string>
+    <string name="error_maximum_length">Maximum length: %1$d</string>
+    <string name="error_not_found">Invalid URL. Please, try again later.</string>
+    <string name="error_unknown">Something went wrong</string>
+    <string name="error_sorry_something_went_wrong">Sorry, something went wrong</string>
+    <string name="error_timeout">Connection timeout exception</string>
+    <string name="error_internet_connection">Internet connection problem. Please, check your connection and try again.</string>
+</resources>

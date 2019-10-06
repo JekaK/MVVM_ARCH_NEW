@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dialog styles-->
+    <style name="Dialog.Fullscreen" parent="BaseAppTheme">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@style/Animation.Design.BottomSheetDialog</item>
+        <item name="android:animationDuration">@integer/config_screen_transition_duration</item>
+    </style>
+</resources>

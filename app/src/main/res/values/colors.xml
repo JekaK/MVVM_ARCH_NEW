@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Main Theme colors-->
+    <color name="colorPrimary">#001016</color>
+    <color name="colorPrimaryDark">#001016</color>
+    <color name="colorPrimaryVariant">#000000</color>
+    <color name="colorOnPrimary">#ffffff</color>
+
+    <color name="colorAccent">#03DAC6</color>
+    <color name="colorSecondary">#019fec</color>
+    <color name="colorSecondaryVariant">#80019FEC</color>
+    <color name="colorOnSecondary">#ffffff</color>
+
+    <color name="colorControlHighlight">#0097A7</color>
+
+    <color name="colorBackground">#ffffff</color>
+    <color name="colorOnBackground">#000000</color>
+
+    <color name="colorSurface">#ffffff</color>
+    <color name="colorOnSurface">#000000</color>
+
+    <color name="colorError">#f00</color>
+    <color name="colorOnError">#ffffff</color>
+
+    <!--Text colors-->
+    <color name="textSecondary">#ccc</color>
+    <color name="textPrimary">#000</color>
+
+</resources>

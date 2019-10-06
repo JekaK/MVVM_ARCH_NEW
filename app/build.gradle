@@ -1,0 +1,147 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.krikun.mymvvm_arch"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding.enabled = true
+
+    androidExtensions {
+        experimental = true
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+        freeCompilerArgs = ['-XXLanguage:+InlineClasses']
+    }
+}
+
+ext {
+    // App dependencies which user more then one time
+    coroutinesVersion = "1.2.2"
+    glideVersion = '4.9.0'
+    okHttpVersion = '3.12.0'
+    rxLifecycleVersion = '3.0.0'
+    retrofitVersion = '2.6.0'
+    collectionsBindingVersion = '3.0.0'
+    fastAdapterVersion = '4.0.1'
+    koinVersion = '2.0.1'
+    navigationVersion = '2.1.0'
+    kotlinVersion = '1.3.50'
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+
+    //Architecture components
+    api "androidx.core:core-ktx:1.1.0"
+    api "androidx.appcompat:appcompat:1.1.0"
+    api "androidx.constraintlayout:constraintlayout:1.1.3"
+    api "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0-alpha05"
+    api "androidx.lifecycle:lifecycle-extensions:2.1.0"
+    api "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+    api "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+    api "androidx.paging:paging-runtime:2.1.0"
+    api "androidx.recyclerview:recyclerview:1.0.0"
+    api 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
+
+    //Glide
+    api "com.github.bumptech.glide:glide:$glideVersion"
+    kapt "com.github.bumptech.glide:compiler:$glideVersion"
+    api "jp.wasabeef:glide-transformations:4.0.1"
+
+    //Material
+    api "com.google.android.material:material:1.1.0-beta01"
+//        api "com.google.android.material:material:1.1.0-alpha08"
+
+    //Gson
+    api "com.google.code.gson:gson:2.8.5"
+
+    //Kotlin
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+    api "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
+
+    //Rx
+    api "io.reactivex.rxjava2:rxjava:2.2.5"
+    api "io.reactivex.rxjava2:rxkotlin:2.3.0"
+    api "io.reactivex.rxjava2:rxandroid:2.1.0"
+    api "com.jakewharton.rxbinding2:rxbinding:2.1.1"
+
+    //Rx Lifecycle
+    api "com.trello.rxlifecycle3:rxlifecycle:$rxLifecycleVersion"
+    api "com.trello.rxlifecycle3:rxlifecycle-kotlin:$rxLifecycleVersion"
+    api "com.trello.rxlifecycle3:rxlifecycle-android-lifecycle-kotlin:$rxLifecycleVersion"
+
+    //Retrofit2
+    api "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    api "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+
+    //OkHttp
+    api "com.squareup.okhttp3:okhttp:$okHttpVersion"
+    api "com.squareup.okhttp3:logging-interceptor:$okHttpVersion"
+
+    //Hawk
+    api "com.orhanobut:hawk:2.0.1"
+
+    //Runtime permission
+    api "com.github.florent37:runtime-permission-kotlin:1.1.0"
+
+    //Transitions
+    api "com.andkulikov:transitionseverywhere:1.8.1"
+
+    //Keyboard tools
+    api "net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:2.2.0"
+
+    //Anko
+    api "org.jetbrains.anko:anko-commons:0.10.8"
+
+    //Item animators
+    api "com.mikepenz:itemanimators:1.1.0"
+
+    //Firebase
+    api "com.google.firebase:firebase-core:17.2.0"
+
+    //Flexbox
+    api "com.google.android:flexbox:1.1.0"
+
+    //Pretty time
+    api "org.ocpsoft.prettytime:prettytime:4.0.1.Final"
+
+    //FastAdapter
+    api "com.mikepenz:fastadapter:$fastAdapterVersion"
+    api "com.mikepenz:fastadapter-extensions-ui:$fastAdapterVersion"
+    api "com.mikepenz:fastadapter-extensions-utils:$fastAdapterVersion"
+    api "com.mikepenz:fastadapter-extensions-diff:$fastAdapterVersion"
+
+    //DI
+    api "org.koin:koin-androidx-scope:$koinVersion"
+    api "org.koin:koin-androidx-viewmodel:$koinVersion"
+    api "org.koin:koin-androidx-ext:$koinVersion"
+
+    // Input mask
+    api "com.redmadrobot:inputmask:3.4.4"
+
+    //LeakCanary
+    debugApi 'com.squareup.leakcanary:leakcanary-android:1.6.2'
+}
